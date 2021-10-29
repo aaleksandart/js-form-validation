@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="Aleksandar Todorovic, EC Utbildning">
+   <title>Register form</title>
+   <script src="https://kit.fontawesome.com/124ac6c2b5.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="register_form">
+            <div class="header">
+                <h2>Create your account</h2>
+            </div>
+            <form class="form" id="form" action="" novalidate>
+                <div class="form_manager">
+                    <label for="">Firstname</label>
+                    <input id="firstname" type="text" placeholder="David">
+                    <small id="error-firstname"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">Lastname</label>
+                    <input id="lastname" type="text" placeholder="Andersson">
+                    <small id="error-lastname"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">Email</label>
+                    <input id="email" type="email" placeholder="d.andersson@gmail.com">
+                    <small id="error-email"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">Password</label>
+                    <input id="password" type="password" placeholder="SpiderMonkey12">
+                    <small id="error-password"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">Confirm password</label>
+                    <input id="confirm_password" type="password" placeholder="Confirm password">
+                    <small id="error-confirm_password"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">Date of birth</label>
+                    <input id="date_of_birth" type="text" placeholder="1988-03-05">
+                    <small id="error-date_of_birth"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">Address</label>
+                    <input id="address" type="text" placeholder="Vargvägen 10">
+                    <small id="error-address"></small>
+                </div>
+                <div class="form_manager">
+                    <label for="">ZIP code</label>
+                    <input id="zip_code" type="text" placeholder="13673">
+                    <small id="error-zip_code"></small>
+                </div>
+                <button id="submit">Submit</button>
+            </form>    
+        </div>
+    </div>
+    
+    <script src="./script/script.js"></script>
+</body>
+</html>
