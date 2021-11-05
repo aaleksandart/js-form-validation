@@ -96,7 +96,7 @@ function check_date(element) {
     let birth_day = new Date(element.value)
 
     if(birth_day == 'Invalid Date' || element.value.length < 10  ) {
-        error_text.innerText = `This is not a valid date input.`;
+        error_text.innerText = `This is not a valid date input. Submit to validate.`;
         form_manager.className = 'form_manager border_warning'
     } else {
         let year = day_today.getFullYear() - birth_day.getFullYear()
