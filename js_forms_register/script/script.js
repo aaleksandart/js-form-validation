@@ -13,8 +13,11 @@ const submit = document.getElementById('submit')
 //ARRAY FÖR HTML VARIABLER
 let form_value_array = [firstName, lastName, email, password, confirmPassword, dateOfBirth, address, zipCode]
 
+let success_submit = 0;
+
 //VALIDERAR LÄNGD MED REGULAR EXPRESSION
 function check_length(element) {
+    
     const regEx_length = /^([A-Za-z]).{1,}$/;
     const form_manager = element.parentElement
     const error_text = form_manager.querySelector('small')
@@ -92,14 +95,15 @@ function check_date(element) {
     let day_today = new Date();
     let birth_day = new Date(element.value)
 
-    if(birth_day == 'Invalid Date') {
+    if(birth_day == 'Invalid Date' || element.value.length < 10  ) {
         error_text.innerText = `This is not a valid date input.`;
         form_manager.className = 'form_manager border_warning'
     } else {
         let year = day_today.getFullYear() - birth_day.getFullYear()
         let days = (day_today.getDate() + ((day_today.getMonth() - 1) * 30)) - (birth_day.getDate() + ((birth_day.getMonth() - 1) * 30))
         if( days < 0) { year -= 1; }
-        if( days === 0) {  alert("Happy birthday!"); }
+        if( days === 0 && year >= 0) {  alert("Happy birthday!"); }
+        if( year < 0) { alert('You are not born yet!')}
 
         if(year < 18) {
             error_text.innerText = `You need to be at least 18 years old`;
@@ -136,7 +140,7 @@ zipCode.addEventListener('keyup', function(e) {
 
 //KONTROLLERAR ALLA FÄLT VID SUBMIT
 form.addEventListener('submit', function(e) {
-
+    
     e.preventDefault()
     form_value_array.forEach(element => {
         switch(element.id) {
